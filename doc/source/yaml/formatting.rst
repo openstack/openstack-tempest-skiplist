@@ -16,9 +16,11 @@ The YAML file used by `openstack-tempest-skiplist` use the following pattern:
       jobs:
         - job1
         - job2
+      reason: 'default reason'
       releases:
         - master
           lp: 'master launchpad'
+          reason: 'Some reason'
         - train
           bz: 'train bugzilla'
         - ussuri
@@ -28,7 +30,7 @@ YAML values
 -----------
 
 
-LP and BZ
+BZ and LP
 +++++++++
 
 One of them is required, not both, but it's crucial that people are able to
@@ -40,12 +42,11 @@ If the lp or bz is set on test level, you don't need to add it per release, it
 will use the test level.
 
 
-Releases
-++++++++
+Deployment
+++++++++++
 
-Releases contain a list of releases that the test will be skipped. It's very
-common that in a release the test is passing, but in another don't, so we can
-manage it here.
+This is right now TripleO only configuration, since it deploys two different
+openstack instances, undercloud and overcloud. Default to overcloud.
 
 
 Jobs
@@ -56,8 +57,17 @@ required field, however, once set, the tool will return the test only if the
 job matches.
 
 
-Deployment
-++++++++++
+Reason
+++++++
 
-This is right now TripleO only configuration, since it deploys two different
-openstack instances, undercloud and overcloud. Default to overcloud
+This is a description about why this test is being skipped. It exists in two
+levels, the first in the test level, that will be the default reason, and in
+release level, where reason can be different.
+
+
+Releases
+++++++++
+
+Releases contain a list of releases that the test will be skipped. It's very
+common that in a release the test is passing, but in another don't, so we can
+manage it here.
