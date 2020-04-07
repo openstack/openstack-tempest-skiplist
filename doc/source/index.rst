@@ -13,5 +13,6 @@ Content:
    overview
    install/index
    yaml/index
+   validate/index
 
 * :ref:`search`
