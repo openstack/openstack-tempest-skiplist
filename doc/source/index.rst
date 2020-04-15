@@ -14,5 +14,6 @@ Content:
    install/index
    yaml/index
    validate/index
+   listyaml/index
 
 * :ref:`search`
