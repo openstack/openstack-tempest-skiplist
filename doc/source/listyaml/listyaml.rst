@@ -20,3 +20,10 @@ format::
    $ tempest-skip list yaml --file tempest_skip.yml --job job1
    $ tempest-skip list yaml --file tempest_skip.yml --release train --job job1
 
+This will return any tests that match the job, as well as tests that doesn't
+have any job configured. This is required when you configure your zuul jobs to
+always parse the --job option. In this scenario, if a job2 is parsed, and there
+is no test with job2, it would return zero tests to be skipped, which is not
+the intent. The test with no job defined, means, skip everywhere, if you
+define the job in the test yaml file, it means, skip all the tests that doesn't
+have a job defined, plus this test
