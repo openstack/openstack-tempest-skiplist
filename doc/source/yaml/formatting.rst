@@ -13,7 +13,9 @@ The YAML file used by `openstack-tempest-skiplist` use the following pattern:
     - test: 'full.tempest.test'
       bz: 'https://bugzilla.redhat.com/1'
       lp: 'https://launchpad.net/bugs/1'
-      deployment: 'undercloud or overcloud'
+      deployment:
+        - 'undercloud'
+        - 'overcloud'
       jobs:
         - job1
         - job2
@@ -92,7 +94,8 @@ Since there's no releases, this will be valid for all releases:
     - test: 'tempest_skip.tests.test_validate'
       bz: 'https://bugzilla.redhat.com/1'
       lp: 'https://launchpad.net/bugs/1'
-      deployment: 'undercloud'
+      deployment:
+        - 'undercloud'
       reason: 'This test will be skipped in any release'
 
 
@@ -107,7 +110,8 @@ As release is set, the test will be skipped only on the matching releases
     - test: 'tempest_skip.tests.test_validate'
       bz: 'https://bugzilla.redhat.com/1'
       lp: 'https://launchpad.net/bugs/1'
-      deployment: 'undercloud'
+      deployment:
+        - 'undercloud'
       reason: 'This test will be skipped in any release'
       releases:
         - name: rocky
@@ -129,7 +133,8 @@ If a list of jobs is set, the test will be skipped only in the matching jobs
     - test: 'tempest_skip.tests.test_validate'
       bz: 'https://bugzilla.redhat.com/1'
       lp: 'https://launchpad.net/bugs/1'
-      deployment: 'undercloud'
+      deployment:
+        - 'undercloud'
       reason: 'This test will be skipped in any release'
       jobs:
         - tempest-test-job-skip1
@@ -147,7 +152,8 @@ This test will be skipped only when it matches both, job and release
     - test: 'tempest_skip.tests.test_validate'
       bz: 'https://bugzilla.redhat.com/1'
       lp: 'https://launchpad.net/bugs/1'
-      deployment: 'undercloud'
+      deployment:
+        - 'undercloud'
       reason: 'This test will be skipped in all releases'
       releases:
         - name: rocky
