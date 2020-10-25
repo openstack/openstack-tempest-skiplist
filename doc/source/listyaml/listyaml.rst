@@ -13,12 +13,13 @@ format::
 
     $ tempest-skip list yaml --file tempest_skip.yml
 
-2. ``--release`` and job are the optional parameters - list all the tests
-   within specific release or specific job::
+2. ``--release``, ``--deployment`` and ``--job`` are the optional parameters
+   - list all the tests within specific release, deployment or specific job::
 
-   $ tempest-skip list yaml --file tempest_skip.yml --release train
-   $ tempest-skip list yaml --file tempest_skip.yml --job job1
-   $ tempest-skip list yaml --file tempest_skip.yml --release train --job job1
+   $ tempest-skip list --file tempest_skip.yml --release train
+   $ tempest-skip list --file tempest_skip.yml --job job1
+   $ tempest-skip list --file tempest_skip.yml --release train --job job1
+   $ tempest-skip list --file tempest_skip.yml --deployment undercloud
 
 This will return any tests that match the job, as well as tests that doesn't
 have any job configured. This is required when you configure your zuul jobs to
