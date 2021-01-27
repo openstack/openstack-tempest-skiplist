@@ -31,7 +31,7 @@ Validation
 
 After edit your file, you can check if it is valid with the following command::
 
-    $ tempest-skiplist validate --file file.yaml
+    $ tempest-skip validate --file file.yaml
 
 Examples
 --------
