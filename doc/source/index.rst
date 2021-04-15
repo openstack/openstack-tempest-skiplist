@@ -15,6 +15,7 @@ Content:
    yaml/index
    validate/index
    listyaml/index
+   listallowed/index
    addtest/index
 
 * :ref:`search`

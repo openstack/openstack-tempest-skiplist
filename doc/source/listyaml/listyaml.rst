@@ -1,26 +1,26 @@
 ======================
-List the yaml file
+List skipped tests
 ======================
 
-List Yaml
-----------
+List skipped tests
+-------------------
 
-You can use :command:`tempest-skip` list command to list tests in the yaml
+You can use :command:`tempest-skip list-skipped` command to list tests in the yaml
 file with one positional and two optional parameters which is in the expected
 format::
 
     1. ``--file`` is the positional parameter - lists all the tests in the file::
 
-        $ tempest-skip list yaml --file tempest_skip.yml
+        $ tempest-skip list-skipped yaml --file tempest_skip.yml
 
     2. ``--release``, ``--deployment`` and ``--job`` are the optional
        parameters - list all the tests within a specific release, deployment
        or a specific job::
 
-       $ tempest-skip list --file tempest_skip.yml --release train
-       $ tempest-skip list --file tempest_skip.yml --job job1
-       $ tempest-skip list --file tempest_skip.yml --release train --job job1
-       $ tempest-skip list --file tempest_skip.yml --deployment undercloud
+       $ tempest-skip list-skipped --file tempest_skip.yml --release train
+       $ tempest-skip list-skipped --file tempest_skip.yml --job job1
+       $ tempest-skip list-skipped --file tempest_skip.yml --release train --job job1
+       $ tempest-skip list-skipped --file tempest_skip.yml --deployment undercloud
 
 This will return any tests that match the job, as well as tests that doesn't
 have any job configured. This is required when you configure your zuul jobs to
