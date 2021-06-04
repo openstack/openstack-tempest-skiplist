@@ -15,6 +15,11 @@ openstack-tempest-skiplist will generate a skip list to be executed by tempest
 Quickstart
 ==========
 
+- edit tempest_skip.yml
+- add the required fields, including the launchpad
+- execute tox tests
+- submit :)
+
 Installation
 ------------
 
