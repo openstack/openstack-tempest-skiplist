@@ -54,6 +54,15 @@ This is right now TripleO only configuration, since it deploys two different
 openstack instances, undercloud and overcloud. Default to overcloud.
 
 
+Installers
+++++++++++
+This is a list of installers per release where the test will be
+skipped. The options for installers are 'tripleo' and 'osp',
+where 'tripleo' is the upstream installer and 'osp' is the
+downstream installer.
+The default (if this option is not set) is 'tripleo' and 'osp'.
+
+
 Jobs
 ++++
 
@@ -165,3 +174,28 @@ This test will be skipped only when it matches both, job and release
       jobs:
         - tempest-test-job-skip1
         - tempest-test-job-skip2
+
+
+With releases and installers
+++++++++++++++++++++++++++++
+
+.. code-block:: yaml
+
+  known_failures:
+    - test: 'tempest_skip.tests.test_validate'
+      bz: 'https://bugzilla.redhat.com/1'
+      lp: 'https://launchpad.net/bugs/1'
+      deployment:
+        - 'overcloud'
+      reason: 'This test will be skipped in any release'
+      releases:
+        - name: train
+          reason: 'Test failing in train because of network'
+          installers:
+            - 'tripleo'
+          lp: 'https://launchpad.net/bugs/1'
+        - name: wallaby
+          reason: 'Test is failing in /osp-17 because of storage bug'
+          installers:
+            - 'osp'
+          bz: 'https://bugzilla.redhat.com/1'

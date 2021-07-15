@@ -64,7 +64,11 @@ For more information about each field, visit the `documentation <https://docs.op
             reason: 'Some reason'
           - name: train
             bz: 'https://bugzilla.redhat.com/train1'
+            installers:
+              - 'osp'
           - name: ussuri
+            installers:
+              - 'tripleo'
             bz: 'https://bugzilla.redhat.com/ussuri1'
 
 In the above example, the test *full.tempest.test* will be executed by tempest
