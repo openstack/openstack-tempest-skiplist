@@ -37,3 +37,10 @@ Release filter
 
 The release filter, which is default to master, filter based on group or job
 for an specific release.
+
+Wildcard filter for releases
+----------------------------
+
+If in the releases list in the yaml file, the release ``all`` is set, that
+means, it will not matter which release is passed to ``tempest-skip`` command,
+it will be included in the final list.
