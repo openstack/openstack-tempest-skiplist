@@ -38,6 +38,28 @@ Release filter
 The release filter, which is default to master, filter based on group or job
 for an specific release.
 
+Multiple Groups with same name
+------------------------------------------
+
+Multiple groups can have same name with different tests and releases. This
+behaviour allows us to classify the tests on the basis of releases. Here, we
+cannot define a release more than once in such groups i.e groups having same
+name should mandatorily have different releases::
+
+  - name: featureset062  # standalone-jobs
+    tests:
+      - 'octavia_tempest_plugin.tests.scenario.v2.test_healthmonitor'
+      - 'octavia_tempest_plugin.tests.scenario.v2.test_listener'
+    releases:
+      - master
+      - wallaby
+  - name: featureset062  # standalone-jobs
+    tests:
+      - 'octavia_tempest_plugin.tests.scenario.v2.test_healthmonitor'
+      - 'octavia_tempest_plugin.tests.scenario.v2.test_l7policy'
+    releases:
+      - train
+
 Wildcard filter for releases
 ----------------------------
 
