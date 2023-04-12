@@ -192,26 +192,6 @@ known_failures:
         reason: 'mismatch error, mistral team is investigating'
         lp: 'https://bugs.launchpad.net/tripleo/+bug/1736950'
     jobs: []
-  - test: 'patrole_tempest_plugin'
-    deployment:
-      - 'overcloud'
-    releases:
-      - name: 'master'
-        reason: 'Not supported in TripleO/tempestconf'
-        lp: 'https://bugs.launchpad.net/tripleo/+bug/invalid'
-      - name: 'victoria'
-        reason: 'Not supported in TripleO/tempestconf'
-        lp: 'https://bugs.launchpad.net/tripleo/+bug/invalid'
-      - name: 'train'
-        reason: 'Not supported in TripleO/tempestconf'
-        lp: 'https://bugs.launchpad.net/tripleo/+bug/invalid'
-      - name: 'ussuri'
-        reason: 'Not supported in TripleO/tempestconf'
-        lp: 'https://bugs.launchpad.net/tripleo/+bug/invalid'
-      - name: 'zed'
-        reason: 'Not supported in TripleO/tempestconf'
-        lp: 'https://bugs.launchpad.net/tripleo/+bug/invalid'
-    jobs: []
   - test: 'zaqar_tempest_plugin'
     deployment:
       - 'overcloud'
