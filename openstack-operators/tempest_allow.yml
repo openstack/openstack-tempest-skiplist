@@ -24,3 +24,8 @@ groups:
       - tempest.api.compute.*
     releases:
       - all
+  - name: manila-operator
+    tests:
+      - manila_tempest_tests.tests.api
+    releases:
+      - all

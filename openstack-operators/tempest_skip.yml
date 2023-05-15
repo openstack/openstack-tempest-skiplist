@@ -1064,3 +1064,12 @@ known_failures:
         lp: http://no.bug
     jobs:
       - nova-operator
+  - test: manila_tempest_tests.tests.api.test_share_network_subnets.ShareNetworkSubnetsTest.test_create_delete_subnet
+    deployment:
+      - overcloud
+    releases:
+      - name: master
+        reason: Fix not landed yet
+        lp: http://no.bug
+    jobs:
+      - manila-operator
