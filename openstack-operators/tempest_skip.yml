@@ -1073,3 +1073,21 @@ known_failures:
         lp: http://no.bug
     jobs:
       - manila-operator
+  - test: tempest.api.compute.admin.test_live_migration_negative.LiveMigrationNegativeTest.test_live_block_migration_suspended
+    deployment:
+      - overcloud
+    releases:
+      - name: master
+        reason: Test env does not have compute
+        lp: http://no.bug
+    jobs:
+      - nova-operator
+  - test: tempest.api.compute.admin.test_live_migration_negative.LiveMigrationNegativeTest.test_invalid_host_for_migration
+    deployment:
+      - overcloud
+    releases:
+      - name: master
+        reason: Test env does not have compute
+        lp: http://no.bug
+    jobs:
+      - nova-operator
