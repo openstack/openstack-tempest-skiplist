@@ -1050,3 +1050,28 @@ known_failures:
     jobs:
       - periodic-tripleo-ci-centos-9-ovb-1ctlr_2comp-featureset020-master
       - periodic-tripleo-ci-centos-9-ovb-1ctlr_2comp-featureset020-zed
+  - test: 'neutron_tempest_plugin.scenario.test_security_groups.StatelessSecGroupDualStackDHCPv6StatelessTest.test_default_sec_grp_scenarios'
+    deployment:
+      - 'overcloud'
+    releases:
+      - name: 'wallaby'
+        reason: 'known issue and requires newer version of OVN'
+        bz: 'https://bugzilla.redhat.com/show_bug.cgi?id=2211604'
+        installers:
+          - 'osp'
+    jobs:
+      - periodic-tripleo-ci-rhel-9-standalone-full-tempest-scenario-rhos-17.1
+      - periodic-tripleo-ci-rhel-9-ovb-1ctlr_2comp-featureset020-internal-rhos-17.1
+  - test: 'neutron_tempest_plugin.scenario.test_security_groups.StatelessSecGroupDualStackSlaacTest.test_default_sec_grp_scenarios'
+    deployment:
+      - 'overcloud'
+    releases:
+      - name: 'wallaby'
+        reason: 'known issue and requires newer version of OVN'
+        bz: 'https://bugzilla.redhat.com/show_bug.cgi?id=2211604'
+        installers:
+          - 'osp'
+    jobs:
+      - periodic-tripleo-ci-rhel-9-standalone-full-tempest-scenario-rhos-17.1
+      - periodic-tripleo-ci-rhel-9-ovb-1ctlr_2comp-featureset020-internal-rhos-17.1
+
