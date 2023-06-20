@@ -101,6 +101,15 @@ known_failures:
     jobs:
       - cinder-operator
   # Nova operator
+  - test: tempest.api.compute.admin.test_networks.NetworksTest.test_list_all_networks
+    deployment:
+      - overcloud
+    releases:
+      - name: master
+        reason: Broken test, see https://review.opendev.org/c/openstack/tempest/+/883892
+        lp: http://no.bug
+    jobs:
+      - nova-operator
   - test: tempest.api.compute.admin.test_hypervisor_negative.HypervisorAdminNegativeUnderV252Test.test_search_hypervisor_with_non_admin_user
     deployment:
       - overcloud
