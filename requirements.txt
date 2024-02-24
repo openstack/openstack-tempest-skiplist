@@ -1,6 +1,0 @@
-cliff
-inquirer
-ruamel.yaml>=0.17.7
-tempest
-validators
-voluptuous
